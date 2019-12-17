@@ -11,7 +11,7 @@ Using:
 
 --------------------
 
-Author: [Yuki](https://github.com/Yukichka) 
+Author: [Yuki](https://www.yukiinasawa.me) 
 
 LinkedIn:[Yuki Inasawa](https://www.linkedin.com/in/yuki-inasawa)
 
