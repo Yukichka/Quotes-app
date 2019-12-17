@@ -33,7 +33,7 @@ export class Filtered extends React.Component {
                   }
                 >
                   <img src="/imgs/thumbup.png" alt="thumbup" />
-                  <div> {quote.numberOfVotes}</div>
+                  <div className="vote-n"> {quote.numberOfVotes}</div>
                 </div>
               ) : (
                 <div />
