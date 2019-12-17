@@ -79,7 +79,6 @@
 @media (max-width: 500px) {
   .quote {
     width: 100%;
-
     text-underline-position: under;
     margin: 10px auto;
   }
@@ -89,6 +88,6 @@
   .buttons {
     position: absolute;
     top: 27px;
-    right: 15px;
+    right: 20px;
   }
 }
