@@ -33,7 +33,7 @@ export class Filtered extends React.Component {
                   onClick={() => this.props.onVotedQuote(quote.numberOfVotes, quote.id)}
                 >
                   <img src="/imgs/thumbup.png" alt="thumbup" />
-                  <span>{quote.numberOfVotes}</span>
+                  <div className="vote-n"> {quote.numberOfVotes}</div>
                 </div>
               ) : (
                 <div />

@@ -45,6 +45,7 @@
   margin: 10px auto;
 }
 .quote-en {
+  font-size: 20px;
   font-style: italic;
   cursor: pointer;
 }
@@ -75,6 +76,9 @@
 }
 .vote {
   cursor: pointer;
+}
+.vote-n{
+  display: inline;
 }
 @media (max-width: 500px) {
   .quote {

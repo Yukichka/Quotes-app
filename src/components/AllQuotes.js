@@ -32,7 +32,7 @@ export class AllQuotes extends React.Component {
                   }
                 >
                   <img src="/imgs/thumbup.png" alt="thumbup" />
-                  <span>{quote.numberOfVotes}</span>
+                  <div className="vote-n"> {quote.numberOfVotes}</div>
                 </div>
               ) : (
                 <div />
