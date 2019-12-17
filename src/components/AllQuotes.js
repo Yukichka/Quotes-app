@@ -1,14 +1,6 @@
 import React from "react";
 
 export class AllQuotes extends React.Component {
-  constructor(props) {
-    super(props);
-    this.vote = this.vote.bind(this);
-  }
-  vote(votes, id) {
-    console.log(votes, id);
-    this.props.onVoted(votes, id);
-  }
   render() {
     console.log(this.props);
     const Quotes = [];
@@ -19,7 +11,7 @@ export class AllQuotes extends React.Component {
         <div className="container">
           {Quotes.map((quote, idx) => (
             <div key={idx} className="quote">
-              <div onClick={() => this.onClicked(quote.id)}>
+              <div onClick={() => this.props.onClickedQuote(quote.id)}>
                 {!quote.isClicked ? (
                   <div className="quote-en">{quote.en}</div>
                 ) : (
@@ -27,14 +19,24 @@ export class AllQuotes extends React.Component {
                 )}
               </div>
               <div className="quote-author">{quote.author}</div>
-              <div>Rating {quote.rating}</div>
-              <div
-                className="vote"
-                onClick={() => this.vote(quote.numberOfVotes, quote.id)}
-              >
-                <img src="/imgs/thumbup.png" alt="thumbup" />
-                <span>{quote.numberOfVotes}</span>
-              </div>
+              {quote.rating ? (
+                <div>Rating {quote.rating}</div>
+              ) : (
+                <div>Rating unknown</div>
+              )}
+              {quote.isClicked ? (
+                <div
+                  className="vote"
+                  onClick={() =>
+                    this.props.onVotedQuote(quote.numberOfVotes, quote.id)
+                  }
+                >
+                  <img src="/imgs/thumbup.png" alt="thumbup" />
+                  <span>{quote.numberOfVotes}</span>
+                </div>
+              ) : (
+                <div />
+              )}
             </div>
           ))}
         </div>

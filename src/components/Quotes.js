@@ -20,6 +20,9 @@ export class Quotes extends React.Component {
           listOfQuotes: quote,
           isLoaded: true
         });
+      })
+      .catch(error => {
+        console.log(error);
       });
   }
   onClicked(id) {
@@ -80,41 +83,17 @@ export class Quotes extends React.Component {
               </button>
             </div>
             {!this.state.isFiltered ? (
-              // <AllQuotes vote={this.onVoted} {...this.state.listOfQuotes} />
-              <div className="container">
-                {this.state.listOfQuotes.map((quote, idx) => (
-                  <div key={idx} className="quote">
-                    <div onClick={() => this.onClicked(quote.id)}>
-                      {!quote.isClicked ? (
-                        <div className="quote-en">{quote.en}</div>
-                      ) : (
-                        <div className="after-clicked">{quote.en}</div>
-                      )}
-                    </div>
-                    <div className="quote-author">{quote.author}</div>
-                    {quote.rating ? (
-                      <div>Rating {quote.rating}</div>
-                    ) : (
-                      <div>Rating unknown</div>
-                    )}
-                    {quote.isClicked ? (
-                      <div
-                        className="vote"
-                        onClick={() =>
-                          this.onVoted(quote.numberOfVotes, quote.id)
-                        }
-                      >
-                        <img src="/imgs/thumbup.png" alt="thumbup" />
-                        <span>{quote.numberOfVotes}</span>
-                      </div>
-                    ) : (
-                      <div />
-                    )}
-                  </div>
-                ))}
-              </div>
+              <AllQuotes
+                {...this.state.listOfQuotes}
+                onClickedQuote={this.onClicked}
+                onVotedQuote={this.onVoted}
+              />
             ) : (
-              <Filtered {...this.state.listOfQuotes} />
+              <Filtered
+                {...this.state.listOfQuotes}
+                onClickedQuote={this.onClicked}
+                onVotedQuote={this.onVoted}
+              />
             )}
           </div>
         )}

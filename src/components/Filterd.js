@@ -14,13 +14,30 @@ export class Filtered extends React.Component {
         <div className="container">
           {filteredQuotes.map((quote, idx) => (
             <div key={idx} className="quote">
-              {!quote.isClicked ? (
-                <div className="quote-en">{quote.en}</div>
-              ) : (
-                <div className="after-clicked">{quote.en}</div>
-              )}
+              <div onClick={() => this.props.onClickedQuote(quote.id)}>
+                {!quote.isClicked ? (
+                  <div className="quote-en">{quote.en}</div>
+                ) : (
+                  <div className="after-clicked">{quote.en}</div>
+                )}
+              </div>
               <div className="quote-author">{quote.author}</div>
-              <div>Rating {quote.rating}</div>
+              {quote.rating ? (
+                <div>Rating {quote.rating}</div>
+              ) : (
+                <div>Rating unknown</div>
+              )}
+              {quote.isClicked ? (
+                <div
+                  className="vote"
+                  onClick={() => this.props.onVotedQuote(quote.numberOfVotes, quote.id)}
+                >
+                  <img src="/imgs/thumbup.png" alt="thumbup" />
+                  <span>{quote.numberOfVotes}</span>
+                </div>
+              ) : (
+                <div />
+              )}
             </div>
           ))}
         </div>
