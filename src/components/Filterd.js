@@ -1,9 +1,10 @@
 import React from "react";
+import topFilter from "./TopFilter";
 
 export class Filtered extends React.Component {
   render() {
     console.log(this.props);
-    const filteredQuotes = this.props.quotes.filter(quote => quote.rating >= 3);
+    const filteredQuotes = topFilter(this.props.quotes)
     console.log(filteredQuotes);
     return (
       <div className="filter">
