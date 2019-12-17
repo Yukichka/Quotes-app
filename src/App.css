@@ -82,6 +82,9 @@
     text-underline-position: under;
     margin: 10px auto;
   }
+  .quote-en {
+    font-size: 20px;
+  }
   .button {
     margin: 5px 0;
   }
