@@ -7,6 +7,7 @@ Using:
 - create-react-app
 - react
 - REST API
+- unit testing mocha/chai
 
 
 --------------------
