@@ -3,13 +3,10 @@ import React from "react";
 export class AllQuotes extends React.Component {
   render() {
     console.log(this.props);
-    const Quotes = [];
-    Object.values(this.props).map(el => Quotes.push(el));
-    console.log(Quotes);
     return (
       <div className="allquotes">
         <div className="container">
-          {Quotes.map((quote, idx) => (
+          {this.props.quotes.map((quote, idx) => (
             <div key={idx} className="quote">
               <div onClick={() => this.props.onClickedQuote(quote.id)}>
                 {!quote.isClicked ? (

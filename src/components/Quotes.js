@@ -84,13 +84,13 @@ export class Quotes extends React.Component {
             </div>
             {!this.state.isFiltered ? (
               <AllQuotes
-                {...this.state.listOfQuotes}
+                quotes={this.state.listOfQuotes}
                 onClickedQuote={this.onClicked}
                 onVotedQuote={this.onVoted}
               />
             ) : (
               <Filtered
-                {...this.state.listOfQuotes}
+                quotes={this.state.listOfQuotes}
                 onClickedQuote={this.onClicked}
                 onVotedQuote={this.onVoted}
               />

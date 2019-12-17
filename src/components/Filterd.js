@@ -3,10 +3,7 @@ import React from "react";
 export class Filtered extends React.Component {
   render() {
     console.log(this.props);
-    const Quotes = [];
-    Object.values(this.props).map(el => Quotes.push(el));
-    console.log(Quotes);
-    const filteredQuotes = Quotes.filter(quote => quote.rating >= 3);
+    const filteredQuotes = this.props.quotes.filter(quote => quote.rating >= 3);
     console.log(filteredQuotes);
     return (
       <div className="filter">
@@ -30,10 +27,12 @@ export class Filtered extends React.Component {
               {quote.isClicked ? (
                 <div
                   className="vote"
-                  onClick={() => this.props.onVotedQuote(quote.numberOfVotes, quote.id)}
+                  onClick={() =>
+                    this.props.onVotedQuote(quote.numberOfVotes, quote.id)
+                  }
                 >
                   <img src="/imgs/thumbup.png" alt="thumbup" />
-                  <div className="vote-n"> {quote.numberOfVotes}</div>
+                  <div> {quote.numberOfVotes}</div>
                 </div>
               ) : (
                 <div />
