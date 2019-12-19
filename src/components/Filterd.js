@@ -13,6 +13,7 @@ export class Filtered extends React.Component {
         <div className="container">
           {filteredQuotes.map((quote, idx) => (
             <QuoteContent
+              key={idx}
               quote={quote}
               idx={idx}
               onClickedQuote={this.props.onClickedQuote}
