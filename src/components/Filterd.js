@@ -1,5 +1,7 @@
 import React from "react";
 import topFilter from "./TopFilter";
+import { QuoteContent } from "./QuoteContent";
+
 
 export class Filtered extends React.Component {
   render() {

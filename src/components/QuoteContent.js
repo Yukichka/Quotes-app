@@ -5,7 +5,7 @@ export class QuoteContent extends React.Component {
     return (
       <div className="quotecontent">
         <div key={this.props.idx} className="quote">
-          <div onClick={() => this.props.onClickedQuote(quote.id)}>
+          <div onClick={() => this.props.onClickedQuote(this.props.quote.id)}>
             {!this.props.quote.isClicked ? (
               <div className="quote-en">{this.props.quote.en}</div>
             ) : (

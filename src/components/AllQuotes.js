@@ -1,5 +1,5 @@
 import React from "react";
-import { QuoteContent } from "react";
+import { QuoteContent } from "./QuoteContent";
 export class AllQuotes extends React.Component {
   render() {
     console.log(this.props);
@@ -7,7 +7,12 @@ export class AllQuotes extends React.Component {
       <div className="allquotes">
         <div className="container">
           {this.props.quotes.map((quote, idx) => (
-            <QuoteContent quote={quote} idx={idx}/>
+            <QuoteContent
+              quote={quote}
+              idx={idx}
+              onClickedQuote={this.props.onClickedQuote}
+              onVotedQuote={this.props.onVotedQuote}
+            />
           ))}
         </div>
       </div>
